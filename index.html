@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../favicon.ico">
+
+
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+  </head>
+
+  <body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    
+    <div align="center" class="btnDIV">
+        <h1 class="display-4 text-white bg-dark font-weight-bold">Güber</h1>
+
+      <div class="input-group pt-3 pl-3 pr-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Your Name" id="name" required>
+      </div>
+    
+   
+    <div class="input-group pt-2 pl-3 pr-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+        </div>
+        <input type="tel" class="form-control" placeholder="Your Phone Number" id="number" required>
+    </div>
+
+    <div class="input-group pt-2 pl-3 pr-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+        </div>
+        <input type="date" class="form-control" placeholder="When?" id="date" required>
+    </div>
+
+    <div class="input-group pt-2 pl-3 pr-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-clock"></i></span>
+        </div>
+        <input type="time" class="form-control" placeholder="When?" id="time" required>
+    </div>
+
+<div class="pt-2 pl-3 pr-3">
+    <div class="input-group-prepend">
+        
+        <span class="input-group-text w-100"><i class="fa fa-map-marked mr-2"></i> Your Location:</span>
+    </div>
+    <iframe width="100%" height="300" src="https://embed.waze.com/iframe?zoom=16&lat=32.794382&lon=34.989674&ct=livemap" id="location"></iframe>
+</div>
+
+
+
+    <div class="input-group pt-2 pl-3 pr-3">
+        <div class="input-group-prepend h-25">
+            <span class="input-group-text">Do you Have A Destination?</span>
+        </div>
+       <label class="btn btn-info btn-block form-control" data-toggle="collapse" data-target="#contentId" aria-expanded="false"
+       aria-controls="contentId">
+        <input type="checkbox" id="checkbox">
+      </label>
+    </div>
+    <div class="collapse" id="contentId">
+        <div class="pl-3 pr-3">
+
+            <iframe width="100%" height="300" src="https://embed.waze.com/iframe?zoom=16&lat=32.794382&lon=34.989674&ct=livemap" id="destination"></iframe>
+        </div>
+        
+    </div>
+  
+
+
+        <button class="button button--sacnite button--round-l button--size-l mt-5" onclick="send()"><i class="fa fa-car"></i></button>
+  </div>
+          
+
+
+	
+			
+
+			
+
+    <script>
+        $('label').on('mouseup', function(e){
+          var radio = $(this).find('input[type=checkbox]');
+
+        if( radio.is(':checked') ){
+          radio.prop('checked', false);
+
+        } else {
+          radio.prop('checked', true);
+
+        }
+
+      });
+
+        // Disable default behavior
+        $('label').click(function(e){
+            e.preventDefault();
+        });
+        function send() 
+        {
+          var link = "https://wa.me/972507302850?text="  
+          var name = $("#name").val();
+          var phone = $("#phone").val();
+          var date = $("#date").val();
+          var time = $("#time").val();
+          var checkbox = $('#checkbox').prop("checked");
+          var location = "";
+          var destination = "";
+          var text = "";
+          if (checkbox == true){
+            text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
+            "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". See you!"
+          }
+          else
+          {
+            text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
+            "My location is " + location + ". You can call me for more information at " + phone + ". See you!"
+          }
+
+          link = link + text;
+
+          window.open(link);
+        }
+    </script>
+
+
+ 
+  </body>
+</html>
