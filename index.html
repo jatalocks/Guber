@@ -107,8 +107,30 @@
 
     </div>
     
+    <div class="input-group pt-2 pl-3 pr-3">
+        <div class="input-group-prepend h-25">
+            <span class="input-group-text w-100">Do You Want to Add Notes to the Driver?</span>
+        </div>
+       <label class="btn btn-info btn-block form-control" data-toggle="collapse" data-target="#contentId2" aria-expanded="false"
+       aria-controls="contentId2">
+        <input type="checkbox" id="checkbox2">
+      </label>
+    </div>
+    <div class="collapse" id="contentId2">
+        <div class="pl-3 pr-3">
+          
+            <div class="input-group pt-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-message"></i></span>
+                </div>
+                <textarea class="form-control" placeholder="Say something to the driver?" id="extra"></textarea>
+            </div>
+        </div>
+        
+    </div>
 
-        <button class="button button--sacnite button--round-l button--size-l mt-5" onclick="send()"><i class="fa fa-car"></i></button>
+
+        <button class="button button--sacnite button--round-l button--size-l mt-3" onclick="send()"><i class="fa fa-car"></i></button>
   </div>
           
 
@@ -150,7 +172,9 @@
           var date = $("#date").val();
           var time = $("#time").val();
           var checkbox = $('#checkbox').prop("checked");
+          var checkbox2 = $('#checkbox2').prop("checked");
           var location = $("#location").val();
+          var extra = $("#extra").val();
           /*
           var location = document.getElementsByClassName("wm-search__input")[0].value;
           console.log(location);
@@ -166,26 +190,78 @@
             }
           }
 */
+            if (name == undefined || name == "")
+            {
+              alert("Name Invalid. Please Enter Name.");
+              return;
+            }
+
+            if (phone == undefined || phone == "")
+            {
+              alert("Phone Invalid. Please Enter Phone.");
+              return;
+            }
+            if (date == undefined || date == "")
+            {
+              alert("Date Invalid. Please Enter Date.");
+              return;
+            }
+            
+            if (time == undefined || time == "")
+            {
+              alert("Time Invalid. Please Enter Time.");
+              return;
+            }
             if (location == undefined || location == "")
             {
-              alert("Location Invalid. Please Try Again.");
+              alert("Location Invalid. Please Enter Location.");
               return;
             }
           var destination = $("#destination").val();
           var text = "";
-          if (checkbox == true){
-            text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
-            "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". See you!"
+          if (checkbox == true)
+          {
+           
             if (destination == undefined || destination == "")
             {
-              alert("Destination Invalid. Please Try Again.");
+              alert("Destination Invalid. Please Enter Destination.");
               return;
+            }
+
+            if (checkbox2 == true)
+            {
+              if (extra == undefined || extra == "")
+              {
+                alert("Extra Notes Invalid. Please Enter Notes.");
+                return;
+              }
+              text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
+              "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". Also: " + extra + ". See you!"
+            }
+            else
+            {
+              text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
+              "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". See you!"
             }
           }
           else
           {
-            text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
-            "My location is " + location + ". You can call me for more information at " + phone + ". See you!"
+            if (checkbox2 == true)
+            {
+              if (extra == undefined || extra == "")
+              {
+                alert("Extra Notes Invalid. Please Enter Notes.");
+                return;
+              }
+              text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
+              "My location is " + location + ". You can call me for more information at " + phone + ". Also: " + extra + ". See you!"
+            }
+            else
+            {
+              text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
+              "My location is " + location + ". You can call me for more information at " + phone + ". See you!"
+            }
+
           }
 
           link = link + text;
