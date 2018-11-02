@@ -24,7 +24,7 @@
 
     
     <div align="center" class="btnDIV">
-        <h1 class="display-4 text-white bg-dark font-weight-bold">Güber</h1>
+        <h1 class="display-4 text-white bg-dark font-weight-bold"><span style="color: yellow;">G</span>über</h1>
 
       <div class="input-group pt-3 pl-3 pr-3">
           <div class="input-group-prepend">
@@ -79,7 +79,7 @@
     </div>
     <div class="collapse" id="contentId">
         <div class="pl-3 pr-3">
-
+          
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -130,11 +130,15 @@
         {
           var link = "https://wa.me/972507302850?text="  
           var name = $("#name").val();
-          var phone = $("#phone").val();
+          var phone = $("#number").val();
           var date = $("#date").val();
           var time = $("#time").val();
           var checkbox = $('#checkbox').prop("checked");
           var location = $(".wm-search__input").val()
+          if (location == undefined)
+          {
+            var location = $(".wm-search__secondary").text()
+          }
           var destination = $("#destination").val();
           var text = "";
           if (checkbox == true){
