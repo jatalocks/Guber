@@ -24,7 +24,11 @@
 
     
     <div align="center" class="btnDIV">
-        <h1 class="display-4 text-white bg-dark font-weight-bold"><span style="color: yellow;">G</span>über</h1>
+        <h1 class="display-4 text-white bg-dark font-weight-bold"><span style="color: yellow;">G</span>über
+        
+        <small style="font-size: 12px">An Über Service. By Gersh.</small>
+        </h1>
+        
 
       <div class="input-group pt-3 pl-3 pr-3">
           <div class="input-group-prepend">
@@ -63,14 +67,21 @@
     </div>
 -->
     <div class="pt-2 pl-3 pr-3">
-      <h5 class="input-group-text font-weight-bold">Location</h5>
-        <iframe width="100%" height="300" src="https://embed.waze.com/iframe?zoom=16&lat=32.794382&lon=34.989674&ct=livemap"></iframe>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Location" id="location" required>
+        </div>
+        
     </div>
 
+    
 
     <div class="input-group pt-2 pl-3 pr-3">
         <div class="input-group-prepend h-25">
-            <span class="input-group-text">Do you Have A Destination?</span>
+            <span class="input-group-text w-100">Do you Have A Destination?</span>
         </div>
        <label class="btn btn-info btn-block form-control" data-toggle="collapse" data-target="#contentId" aria-expanded="false"
        aria-controls="contentId">
@@ -80,7 +91,7 @@
     <div class="collapse" id="contentId">
         <div class="pl-3 pr-3">
           
-            <div class="input-group">
+            <div class="input-group pt-2">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                 </div>
@@ -90,7 +101,12 @@
         
     </div>
   
+    <div class="input-group pt-2 pl-3 pr-3">
+        <span class="input-group-text w-100"><i class="fas fa-map mr-2"></i>Map</span>
+        <iframe width="100%" height="300" src="https://embed.waze.com/iframe?zoom=16&lat=32.794382&lon=34.989674&ct=livemap" id="frame"></iframe>
 
+    </div>
+    
 
         <button class="button button--sacnite button--round-l button--size-l mt-5" onclick="send()"><i class="fa fa-car"></i></button>
   </div>
@@ -134,16 +150,37 @@
           var date = $("#date").val();
           var time = $("#time").val();
           var checkbox = $('#checkbox').prop("checked");
-          var location = $(".wm-search__input").val()
-          if (location == undefined)
+          var location = $("#location").val();
+          /*
+          var location = document.getElementsByClassName("wm-search__input")[0].value;
+          console.log(location);
+          if (location == undefined || location == "")
           {
-            var location = $(".wm-search__secondary").text()
+            
+            var location = document.getElementsByClassName("wm-search__selected")[0].value;
+            console.log(location);
+            if (location == undefined || location == "")
+            {
+              alert("Location Invalid. Please Try Again.");
+              return;
+            }
           }
+*/
+            if (location == undefined || location == "")
+            {
+              alert("Location Invalid. Please Try Again.");
+              return;
+            }
           var destination = $("#destination").val();
           var text = "";
           if (checkbox == true){
             text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
             "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". See you!"
+            if (destination == undefined || destination == "")
+            {
+              alert("Destination Invalid. Please Try Again.");
+              return;
+            }
           }
           else
           {
