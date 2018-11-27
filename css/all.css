@@ -32,7 +32,7 @@
 .button.button--sacnite {
     width: 10rem;
     height: 10rem;
-    color: yellow;
+    color: black;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
@@ -45,7 +45,7 @@
     height: 100%;
     border-radius: inherit;
     z-index: -1;
-    box-shadow: inset 0 0 0 1.3rem yellow;
+    box-shadow: inset 0 0 0 1.3rem black;
     -webkit-transform: scale3d(0.9, 0.9, 1);
     transform: scale3d(0.9, 0.9, 1);
     -webkit-transition: box-shadow 0.3s, -webkit-transform 0.3;
@@ -55,10 +55,10 @@
     box-shadow: inset 0 0 0 35px #fff;
 }
 .button--sacnite:hover {
-    color: teal;
+    color: yellow;
 }
 .button--sacnite:hover::before {
-    box-shadow: inset 0 0 0 2px teal;
+    box-shadow: inset 0 0 0 2px yellow;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
 }
@@ -78,7 +78,7 @@ header{
 }
 
 
-section:first-child{
+section{
     
 
     padding: 0 0.5em 0.5em 0.5em;
@@ -90,27 +90,36 @@ section:first-child{
 }
 .quick img{
     height: 8em;
+    width: 8em;
     border: 3px solid white;
     border-radius: 10px;
     cursor: pointer;
     margin-top: 0.5em;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
 }
 .quick img:hover{
-    filter: sepia(1);
+
+    transform: scale3d(1.15,1.15,1.15);
 }
 body{
     background-image: url("https://www.colbonews.co.il/wp-content/uploads/2017/03/391969.jpg");
     
 }
-.quick{
-    
-    width: 100%;
 
+.quick{
+
+    width: 17.4em;
+
+}
+input{
+    font-size: 18px !important;
 }
 
 .input-group-text{
     width: 100%;
-   
+    font-size: 18px;
 }
 
 
