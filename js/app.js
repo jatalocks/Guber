@@ -7,25 +7,25 @@ $(document).ready(function () {
 
     var today = new Date();
     var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
+    var mm = today.getMonth() + 1; //January is 0!
     var yyyy = today.getFullYear();
-    
-    var time = (
-        ("0" + today.getHours()).slice(-2)   + ":" + 
-        ("0" + today.getMinutes()).slice(-2) + ":" + 
-        ("0" + today.getSeconds()).slice(-2));
-        console.log(time);
-    
-        $('#time').val(time);
 
-    if(dd<10) {
-        dd = '0'+dd
-    } 
-    
-    if(mm<10) {
-        mm = '0'+mm
-    } 
-    
+    var time = (
+        ("0" + today.getHours()).slice(-2) + ":" +
+        ("0" + today.getMinutes()).slice(-2) + ":" +
+        ("0" + today.getSeconds()).slice(-2));
+    console.log(time);
+
+    $('#time').val(time);
+
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
     today = yyyy + '-' + mm + '-' + dd;
 
 
@@ -41,55 +41,54 @@ $(document).ready(function () {
         e.preventDefault();
         console.log("loc");
 
- 
+
         /* HTML5 Geolocation */
         navigator.geolocation.getCurrentPosition(
-            function( position ){ // success cb
+            function (position) { // success cb
                 /* Current Coordinate */
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
-                var google_map_pos = new google.maps.LatLng( lat, lng );
- 
+                var google_map_pos = new google.maps.LatLng(lat, lng);
+
                 /* Use Geocoder to get address */
                 var google_maps_geocoder = new google.maps.Geocoder();
-                google_maps_geocoder.geocode(
-                    { 'latLng': google_map_pos },
-                    function( results, status ) {
-                        if ( status == google.maps.GeocoderStatus.OK && results[0] ) {
+                google_maps_geocoder.geocode({
+                        'latLng': google_map_pos
+                    },
+                    function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK && results[0]) {
                             $('#location').val(results[0].formatted_address);
                             localStorage["location"] = results[0].formatted_address;
                         }
                     }
                 );
             },
-            function(){ // fail cb
+            function () { // fail cb
                 console.log("fail");
             }
         );
     });
 
 
-    $('#name').on('focusout',function(){
+    $('#name').on('focusout', function () {
         localStorage["name"] = $('#name').val();
     });
 
 
-    
+
 
 });
 
 
-function imgclick()
-{ 
-    if (!$("#checkbox").prop("checked"))
-    {
+function imgclick() {
+    if (!$("#checkbox").prop("checked")) {
         $("#checkbox").click();
     }
     $('#destination').val($(event.target)[0].name);
 }
-function send() 
-{
-    var link = "https://wa.me/972507302850?text="  
+
+function send() {
+    var link = "https://wa.me/972507302850?text="
     var name = $("#name").val();
     var phone = $("#number").val();
     var date = $("#date").val();
@@ -113,74 +112,57 @@ if (location == undefined || location == "")
 }
 }
 */
-    if (name == undefined || name == "")
-    {
-        swal("Name Invalid. Please Enter Name.","","warning");
+    if (name == undefined || name == "") {
+        swal("Name Invalid. Please Enter Name.", "", "warning");
         return;
     }
 
-    if (phone == undefined || phone == "")
-    {
-        swal("Phone Invalid. Please Enter Phone.","","warning");
+    if (phone == undefined || phone == "") {
+        swal("Phone Invalid. Please Enter Phone.", "", "warning");
         return;
     }
-    if (date == undefined || date == "")
-    {
-        swal("Date Invalid. Please Enter Date.","","warning");
+    if (date == undefined || date == "") {
+        swal("Date Invalid. Please Enter Date.", "", "warning");
         return;
     }
 
-    if (time == undefined || time == "")
-    {
-        swal("Time Invalid. Please Enter Time.","","warning");
+    if (time == undefined || time == "") {
+        swal("Time Invalid. Please Enter Time.", "", "warning");
         return;
     }
-    if (location == undefined || location == "")
-    {
-        swal("Location Invalid. Please Enter Location.","","warning");
+    if (location == undefined || location == "") {
+        swal("Location Invalid. Please Enter Location.", "", "warning");
         return;
     }
     var destination = $("#destination").val();
     var text = "";
-    if (checkbox == true)
-    {
+    if (checkbox == true) {
 
-        if (destination == undefined || destination == "")
-        {
-            swal("Destination Invalid. Please Enter Destination.","","warning");
+        if (destination == undefined || destination == "") {
+            swal("Destination Invalid. Please Enter Destination.", "", "warning");
             return;
         }
 
-        if (checkbox2 == true)
-        {
-            if (extra == undefined || extra == "")
-            {
-                swal("Extra Notes Invalid. Please Enter Notes.","","warning");
+        if (checkbox2 == true) {
+            if (extra == undefined || extra == "") {
+                swal("Extra Notes Invalid. Please Enter Notes.", "", "warning");
                 return;
             }
             text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
                 "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". Also: " + extra + ". See you!"
-        }
-        else
-        {
+        } else {
             text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
                 "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". See you!"
         }
-    }
-    else
-    {
-        if (checkbox2 == true)
-        {
-            if (extra == undefined || extra == "")
-            {
-                swal("Extra Notes Invalid. Please Enter Notes.","","warning");
+    } else {
+        if (checkbox2 == true) {
+            if (extra == undefined || extra == "") {
+                swal("Extra Notes Invalid. Please Enter Notes.", "", "warning");
                 return;
             }
             text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
                 "My location is " + location + ". You can call me for more information at " + phone + ". Also: " + extra + ". See you!"
-        }
-        else
-        {
+        } else {
             text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
                 "My location is " + location + ". You can call me for more information at " + phone + ". See you!"
         }

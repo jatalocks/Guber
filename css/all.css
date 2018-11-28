@@ -7,15 +7,17 @@
     position: relative;
     z-index: 1;
     cursor: pointer;
-    
+
     position: fixed;
     bottom: 0;
     right: 0;
 }
+
 .button:focus {
     outline: none;
 }
-.button > span {
+
+.button>span {
     vertical-align: middle;
 }
 
@@ -36,6 +38,7 @@
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
+
 .button--sacnite::before {
     content: '';
     position: absolute;
@@ -55,6 +58,7 @@
 .button--sacnite:hover {
     color: yellow;
 }
+
 .button--sacnite:hover::before {
     box-shadow: inset 0 0 0 2px yellow;
     -webkit-transform: scale3d(1, 1, 1);
@@ -62,29 +66,33 @@
 }
 
 
-header{
+header {
     text-align: center;
 }
-.input-group-prepend{
+
+.input-group-prepend {
     width: 2.8em;
 }
-.input-group{
+
+.input-group {
     justify-content: space-between;
 }
 
 
 
-section{
-    
+section {
+
 
     padding: 0 0.5em 0.5em 0.5em;
 }
+
 @media only screen and (max-width: 600px) {
-    aside{
+    aside {
         display: none;
     }
 }
-.quick img{
+
+.quick img {
     height: 8em;
     width: 8em;
     border: 3px solid white;
@@ -95,53 +103,64 @@ section{
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
-.quick img:hover,#icons a{
 
-    transform: scale3d(1.15,1.15,1.15);
+.quick img:hover,
+#icons a {
+
+    transform: scale3d(1.15, 1.15, 1.15);
 }
-body{
+
+body {
     background-image: url("https://www.colbonews.co.il/wp-content/uploads/2017/03/391969.jpg");
-  
+
 }
 
-.quick{
+.quick {
 
     width: 100%;
 
 }
-input{
+
+input {
     font-size: 18px !important;
 }
 
-.input-group-text{
+.input-group-text {
     width: 100%;
     font-size: 18px;
 }
-img{
+
+img {
     object-fit: contain;
 }
-article{
-    background-color:rgba(114, 173, 213, 0.77);
+
+article {
+    background-color: rgba(114, 173, 213, 0.77);
     margin: 0;
 }
-.btn-block{
+
+.btn-block {
     border-radius: 0;
 }
-.aside{
+
+.aside {
     height: 100%;
-    
+
 }
-p{
-    color:white;
+
+p {
+    color: white;
 }
-#sidebarCollapse{
+
+#sidebarCollapse {
     background-color: #3888bc;
     color: white;
-    margin:0;
+    margin: 0;
 }
-.bg-else{
+
+.bg-else {
     background-color: gray;
-    color:black;
+    color: black;
 }
 
 /* Customize the label (the container) */
@@ -156,51 +175,51 @@ p{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .container2 input {
+}
+
+/* Hide the browser's default checkbox */
+.container2 input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
     background-color: white;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container2:hover input ~ .checkmark {
+}
+
+/* On mouse-over, add a grey background color */
+.container2:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .container2 input:checked ~ .checkmark {
+}
+
+/* When the checkbox is checked, add a blue background */
+.container2 input:checked~.checkmark {
     background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .container2 input:checked ~ .checkmark:after {
+}
+
+/* Show the checkmark when checked */
+.container2 input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .container2 .checkmark:after {
+}
+
+/* Style the checkmark/indicator */
+.container2 .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -210,13 +229,14 @@ p{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
-  #icons a{
+#icons a {
     margin-left: 0.5em;
     margin-right: 0.5em;
     margin-bottom: 1em;
-  }
-  #icons a:hover{
-    transform: scale3d(1.4,1.4,1.4);
-  }
+}
+
+#icons a:hover {
+    transform: scale3d(1.4, 1.4, 1.4);
+}
