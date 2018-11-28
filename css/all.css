@@ -123,8 +123,11 @@ input{
 }
 article{
     background-color:rgba(114, 173, 213, 0.77);
+    margin: 40px 0;
 }
-
+.btn-block{
+    border-radius: 0;
+}
 .aside{
     height: 100%;
     
