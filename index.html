@@ -1,281 +1,243 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="shortcut icon" href="../favicon.ico">
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <link rel="stylesheet" type="text/css" href="css/all.css" />
-    </head>
+    <title>Collapsible sidebar using Bootstrap 4</title>
 
-    <body>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/side.css">
+    <link rel="stylesheet" href="css/all.css">
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-        <header>
-            <h1 class="display-4 text-white bg-dark font-weight-bold"><span style="color: yellow;">G</span>über
+</head>
 
-                <small style="font-size: 12px">An Über Service. By Gersh.</small>
-                <button class="btn btn-outline-primary btn-lg mb-3">Mermaz</button>
-            </h1>
-            
-        </header>
-        <article class="container">
-            <div class="row">
-                <section class="col-md">
+<body>
 
-                    <div class="input-group pt-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Your Name" id="name" required>
-                    </div>
-                    <div class="input-group pt-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                        </div>
-                        <input type="tel" class="form-control" placeholder="Your Phone Number" id="number" required>
-                    </div>
-                    <div class="input-group pt-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                        </div>
-                        <input type="date" class="form-control" placeholder="When?" id="date" required>
-                    </div>
-
-                    <div class="input-group pt-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                        </div>
-                        <input type="time" class="form-control" placeholder="When?" id="time" required>
-                    </div>
-                    <div class="pt-2">
-
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Location" id="location" required>
-                        </div>
-                    </div>
-                    <div class="input-group pt-2">
-                   
-                            <div class="input-group">
-                                    <div class="input-group-prepend">
-                                      <div class="input-group-text">
-                                            <input type="checkbox" id="checkbox" data-toggle="collapse" data-target="#contentId" aria-expanded="false"
-                                            aria-controls="contentId">
-                                      </div>
-                                    </div>
-                                    <input type="text" class="form-control" value="Do you Have A Destination?" aria-label="Text input with checkbox" readonly>
-                            </div>
-                                  
-                    </div>
-
-                    <div class="collapse" id="contentId">
-
-
-                        <div class="input-group pt-2">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Destination" id="destination">
-                        </div>
-
-
-                    </div>
-
-                    <div class="input-group pt-2">
-               
-                            <div class="input-group">
-                                    <div class="input-group-prepend">
-                                      <div class="input-group-text">
-                                            <input type="checkbox" id="checkbox2" data-toggle="collapse" data-target="#contentId2" aria-expanded="false"
-                                            aria-controls="contentId2">
-                                      </div>
-                                    </div>
-                                    <input type="text" class="form-control" value="Add Notes to the Driver?" aria-label="Text input with checkbox" readonly>
-                            </div>
-
-                    </div>
-
-                    <div class="collapse" id="contentId2">
-
-
-                        <div class="input-group pt-2">
-
-                            <textarea class="form-control" placeholder="Say something to the driver?" id="extra"></textarea>
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-                
-                <section class="quick col-md pt-3">
-                    <h2 class="input-group-text">Quick Destinations:</h2>
-                
-                    <img name="Shaar ha-Levanon St 2, Haifa" onclick="imgclick()" src="data:image/jpeg;base64,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">
-                    <img name="Sha'ar Palmer St 2" onclick="imgclick()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCCf3dhTi3t-rCBmmu--fYMp4gmmUPBwcS4maD_50-msGYsnYc">
-
-                </section>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+                <strong>BS</strong>
             </div>
-            <button class="button button--sacnite button--round-l button--size-l mt-3" onclick="send()"><i class="fa fa-car"></i></button>
-        </article>
 
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Pages
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-image"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
 
-        <script>
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul>
+        </nav>
 
-                    
+        <!-- Page Content  -->
+        <div id="content">
+            <header>
+
+                <nav class="display-4 text-white bg-dark font-weight-bold">
             
-            $('label').on('mouseup', function(e){
-                var radio = $(this).find('input[type=checkbox]');
+                    <span style="color: yellow;">G</span>über
 
-                if( radio.is(':checked') ){
-                    radio.prop('checked', false);
+                    <small style="font-size: 12px">An Über Service. By Gersh.</small>
+  
+                </nav>
+                <button type="button" id="sidebarCollapse" class="btn btn-info float-left btn-block">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle</span>
+                    </button>
+            </header>
 
-                } else {
-                    radio.prop('checked', true);
 
-                }
 
+            <div class="line"></div>
+            <article class="container-fluid">
+                <div class="row">-
+                    <section class="col-md">
+    
+                        <div class="input-group pt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Your Name" id="name" required>
+                        </div>
+                        <div class="input-group pt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="tel" class="form-control" placeholder="Your Phone Number" id="number" required>
+                        </div>
+                        <div class="input-group pt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
+                            <input type="date" class="form-control" placeholder="When?" id="date" required>
+                        </div>
+    
+                        <div class="input-group pt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                            </div>
+                            <input type="time" class="form-control" placeholder="When?" id="time" required>
+                        </div>
+                        <div class="pt-2">
+    
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-map"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Location" id="location" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group pt-2">
+    
+                            <label class="container2">Do You Have A Destination?
+                                <input type="checkbox" id="checkbox" data-toggle="collapse" data-target="#contentId" aria-expanded="false"
+                                aria-controls="contentId">
+                                <span class="checkmark"></span>
+                              </label>
+    
+                        </div>
+    
+                        <div class="collapse" id="contentId">
+    
+    
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Destination" id="destination">
+                            </div>
+    
+    
+                        </div>
+    
+                        <div class="input-group pt-2">
+    
+                            <label class="container2">Add Notes To The Driver?
+                                <input type="checkbox" id="checkbox2" data-toggle="collapse" data-target="#contentId2" aria-expanded="false"
+                                aria-controls="contentId2">
+                                <span class="checkmark"></span>
+                              </label>
+    
+                        </div>
+                          
+    
+    
+    
+                        <div class="collapse" id="contentId2">
+    
+    
+                            <div class="input-group">
+    
+                                <textarea class="form-control" placeholder="Say something to the driver?" id="extra"></textarea>
+                            </div>
+    
+                        </div>
+    
+                    </section>
+    
+    
+                    
+                    <section class="quick col-md pt-3">
+                        <h2 class="input-group-text">Quick Destinations:</h2>
+                    
+                        <img name="Shaar ha-Levanon St 2, Haifa" onclick="imgclick()" src="data:image/jpeg;base64,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">
+                        <img name="Sha'ar Palmer St 2" onclick="imgclick()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCCf3dhTi3t-rCBmmu--fYMp4gmmUPBwcS4maD_50-msGYsnYc">
+    
+                    </section>
+                </div>
+               
+            </article>
+            <button class="button button--sacnite button--round-l button--size-l mt-3" onclick="send()"><i class="fa fa-car"></i></button>
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
             });
-            $('input#location').keyup(function(e) {
-                console.log("hi");
-                $('iframe').attr("src",$('iframe').attr("src").replace(/(.*q=)(.*)(\+.*)/i, "$1" + this.value + "$3"))
-            });
+        });
+    </script>
+</body>
 
-            function imgclick()
-            { 
-                if (!$("#checkbox").prop("checked"))
-                {
-                    $("#checkbox").click();
-                }
-                $('#destination').val($(event.target)[0].name);
-            }
-
-
-
-            // Disable default behavior
-            $('label').click(function(e){
-                e.preventDefault();
-            });
-            function send() 
-            {
-                var link = "https://wa.me/972507302850?text="  
-                var name = $("#name").val();
-                var phone = $("#number").val();
-                var date = $("#date").val();
-                var time = $("#time").val();
-                var checkbox = $('#checkbox').prop("checked");
-                var checkbox2 = $('#checkbox2').prop("checked");
-                var location = $("#location").val();
-                var extra = $("#extra").val();
-                /*
-          var location = document.getElementsByClassName("wm-search__input")[0].value;
-          console.log(location);
-          if (location == undefined || location == "")
-          {
-
-            var location = document.getElementsByClassName("wm-search__selected")[0].value;
-            console.log(location);
-            if (location == undefined || location == "")
-            {
-              alert("Location Invalid. Please Try Again.");
-              return;
-            }
-          }
-*/
-                if (name == undefined || name == "")
-                {
-                    swal("Name Invalid. Please Enter Name.","","warning");
-                    return;
-                }
-
-                if (phone == undefined || phone == "")
-                {
-                    swal("Phone Invalid. Please Enter Phone.","","warning");
-                    return;
-                }
-                if (date == undefined || date == "")
-                {
-                    swal("Date Invalid. Please Enter Date.","","warning");
-                    return;
-                }
-
-                if (time == undefined || time == "")
-                {
-                    swal("Time Invalid. Please Enter Time.","","warning");
-                    return;
-                }
-                if (location == undefined || location == "")
-                {
-                    swal("Location Invalid. Please Enter Location.","","warning");
-                    return;
-                }
-                var destination = $("#destination").val();
-                var text = "";
-                if (checkbox == true)
-                {
-
-                    if (destination == undefined || destination == "")
-                    {
-                        swal("Destination Invalid. Please Enter Destination.","","warning");
-                        return;
-                    }
-
-                    if (checkbox2 == true)
-                    {
-                        if (extra == undefined || extra == "")
-                        {
-                            swal("Extra Notes Invalid. Please Enter Notes.","","warning");
-                            return;
-                        }
-                        text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
-                            "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". Also: " + extra + ". See you!"
-                    }
-                    else
-                    {
-                        text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
-                            "My location is " + location + ". My destination is " + destination + ". You can call me for more information at " + phone + ". See you!"
-                    }
-                }
-                else
-                {
-                    if (checkbox2 == true)
-                    {
-                        if (extra == undefined || extra == "")
-                        {
-                            swal("Extra Notes Invalid. Please Enter Notes.","","warning");
-                            return;
-                        }
-                        text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
-                            "My location is " + location + ". You can call me for more information at " + phone + ". Also: " + extra + ". See you!"
-                    }
-                    else
-                    {
-                        text = "Hello! My name is " + name + " and I would like to call a Güber for " + date + " at " + time + ". " +
-                            "My location is " + location + ". You can call me for more information at " + phone + ". See you!"
-                    }
-
-                }
-
-                link = link + text;
-
-                window.open(link);
-            }
-        </script>
-
-        <!-- Bootstrap core JavaScript
-================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    </body>
 </html>
