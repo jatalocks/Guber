@@ -122,12 +122,19 @@ input{
     font-size: 18px;
 }
 article{
-    background-color:rgba(50, 95, 103, 0.43);
+    background-color:rgba(114, 173, 213, 0.77);
 }
 
 .aside{
     height: 100%;
     
+}
+p{
+    color:white;
+}
+#sidebarCollapse{
+    background-color: #3888bc;
+    color: white;
 }
 
 

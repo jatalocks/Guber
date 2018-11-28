@@ -142,3 +142,12 @@ if (location == undefined || location == "")
 
     window.open(link);
 }
+
+$('#about').on('click',function(e)
+{
+    var myNode = document.getElementById("content");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+
+});
