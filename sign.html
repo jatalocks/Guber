@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Guber</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/side.css">
+    <link rel="stylesheet" href="css/all.css">
+    <!-- Font Awesome JS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-car-side"></i> Güber</h3>
+                <strong><i class="fas fa-car-side"></i></strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#" id="about">
+                        <i class="fas fa-info-circle"></i>
+                        About
+                    </a>
+
+                </li>
+            </ul>
+            <!--
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-taxi"></i>
+                        More
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                -->
+
+
+            <div class="row justify-content-center" id="icons">
+
+                <a href="#" class="text-center btn btn-success"><i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="https://www.facebook.com/amitai333" class="text-center btn btn-primary"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-center btn btn-info"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <header>
+
+                <nav class="display-4 text-white bg-dark font-weight-bold">
+
+                    <span style="color: yellow;">G</span>über
+
+                    <small style="font-size: 12px">An Über Service. By Gersh.</small>
+                    <button class="btn btn-success m-3" style="max-width:4.2em;">Login</button>
+                </nav>
+                <button type="button" id="sidebarCollapse" class="btn btn-block">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle</span>
+                </button>
+            </header>
+
+                    <style>
+  
+                    
+                    /* Full-width input fields */
+                    input {
+                        width: 100%;
+                        padding: 15px;
+                        margin: 5px 0 22px 0;
+                        display: inline-block;
+                        border: none;
+                        background: #f1f1f1;
+                    }
+                    
+                    input:focus {
+                        background-color: #ddd;
+                        outline: none;
+                    }
+                    
+                    hr {
+                        border: 1px solid #f1f1f1;
+                        margin-bottom: 25px;
+                    }
+                    
+                    /* Set a style for all buttons */
+                    button {
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 14px 20px;
+                        margin: 8px 0;
+                        border: none;
+                        cursor: pointer;
+                        width: 100%;
+                        opacity: 0.9;
+                    }
+                    
+                    button:hover {
+                        opacity:1;
+                    }
+                    
+                    /* Extra styles for the cancel button */
+                    .cancelbtn {
+                        padding: 14px 20px;
+                        background-color: #f44336;
+                    }
+                    
+                    /* Float cancel and signup buttons and add an equal width */
+                    .cancelbtn, .signupbtn {
+                      float: left;
+                      width: 50%;
+                    }
+                    
+                    /* Add padding to container elements */
+                    .container {
+                        padding: 16px;
+                        background-color: rgb(126, 151, 172);
+                    }
+                    
+                    /* Clear floats */
+                    .clearfix::after {
+                        content: "";
+                        clear: both;
+                        display: table;
+                    }
+                    
+                    /* Change styles for cancel button and signup button on extra small screens */
+                    @media screen and (max-width: 300px) {
+                        .cancelbtn, .signupbtn {
+                           width: 100%;
+                        }
+                    }
+                    </style>
+                    <body>
+                    
+                    <form id="sign" action="https://guber-3d87.restdb.io/rest/users" style="border:1px solid #ccc">
+                      <div class="container">
+                        <h1>Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+                    
+                        <label for="name"><b><i class="fa fa-user"></i> Name</b></label>
+                        <input type="email" placeholder="Enter Email" name="name" required>
+                        
+                        <label for="phone"><b><i class="fa fa-phone"></i> Telephone Number</b></label>
+                        <input type="tel" placeholder="Enter Phone" name="phone" required>
+
+                        <label for="address"><b><i class="fas fa-home"></i> Home Address</b></label>
+                        <input type="tel" placeholder="Enter Address" name="address" required>
+                        
+                        <label for="psw"><b><i class="fa fa-key"></i> Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                        <label for="psw-repeat"><b><i class="fa fa-unlock-alt"></i> Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                        
+                    
+                        <div class="clearfix">
+                            
+                          <button type="submit" class="signupbtn w-100"><i class="fas fa-user-plus"></i> Sign Up</button>
+                        </div>
+                      </div>
+                    </form>
+                    
+                    </body>
+        
+                
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="js/app.js"></script>
+    <script src="js/signin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
