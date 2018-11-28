@@ -1,27 +1,71 @@
 $(document).ready(function () {
+    console.log("jquery loaded");
+
+    $('#location').val(localStorage["location"]);
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    
+    if(dd<10) {
+        dd = '0'+dd
+    } 
+    
+    if(mm<10) {
+        mm = '0'+mm
+    } 
+    
+    today = yyyy + '-' + mm + '-' + dd;
+
+
+    $('#date').val(today);
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
     });
 
+
+
+    $("#myloc").on('click', function (e) {
+        e.preventDefault();
+        console.log("loc");
+
+ 
+        /* HTML5 Geolocation */
+        navigator.geolocation.getCurrentPosition(
+            function( position ){ // success cb
+                /* Current Coordinate */
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                var google_map_pos = new google.maps.LatLng( lat, lng );
+ 
+                /* Use Geocoder to get address */
+                var google_maps_geocoder = new google.maps.Geocoder();
+                google_maps_geocoder.geocode(
+                    { 'latLng': google_map_pos },
+                    function( results, status ) {
+                        if ( status == google.maps.GeocoderStatus.OK && results[0] ) {
+                            $('#location').val(results[0].formatted_address);
+                            localStorage["location"] = results[0].formatted_address;
+                        }
+                    }
+                );
+            },
+            function(){ // fail cb
+                console.log("fail");
+            }
+        );
+    });
+
+
+    
+
+
+    
+
 });
 
-$('label').on('mouseup', function(e){
-    var radio = $(this).find('input[type=checkbox]');
-
-    if( radio.is(':checked') ){
-        radio.prop('checked', false);
-
-    } else {
-        radio.prop('checked', true);
-
-    }
-
-});
-$('input#location').keyup(function(e) {
-    console.log("hi");
-    $('iframe').attr("src",$('iframe').attr("src").replace(/(.*q=)(.*)(\+.*)/i, "$1" + this.value + "$3"))
-});
 
 function imgclick()
 { 
@@ -31,13 +75,6 @@ function imgclick()
     }
     $('#destination').val($(event.target)[0].name);
 }
-
-
-
-// Disable default behavior
-$('label').click(function(e){
-    e.preventDefault();
-});
 function send() 
 {
     var link = "https://wa.me/972507302850?text="  
@@ -142,12 +179,3 @@ if (location == undefined || location == "")
 
     window.open(link);
 }
-
-$('#about').on('click',function(e)
-{
-    var myNode = document.getElementById("content");
-        while (myNode.firstChild) {
-            myNode.removeChild(myNode.firstChild);
-        }
-
-});

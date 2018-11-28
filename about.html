@@ -14,11 +14,8 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/side.css">
     <link rel="stylesheet" href="css/all.css">
-   <!-- Font Awesome JS -->
-   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
-   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-
+    <!-- Font Awesome JS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 
 <body>
@@ -27,8 +24,8 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Güber</h3>
-                <strong>GB</strong>
+                <h3><i class="fas fa-car-side"></i> Güber</h3>
+                <strong><i class="fas fa-car-side"></i></strong>
             </div>
 
             <ul class="list-unstyled components">
@@ -45,28 +42,26 @@
                         About
                     </a>
 
-
                 </li>
-                <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                                <i class="fas fa-taxi"></i>
-                                More
-                            </a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="#">Page 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 3</a>
-                                </li>
-                            </ul>
-                </li>
-
             </ul>
-
+                <!--
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-taxi"></i>
+                        More
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                -->
+      
 
             <div class="row justify-content-center" id="icons">
 
@@ -78,37 +73,35 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <header>
+                <header>
 
-                <nav class="display-4 text-white bg-dark font-weight-bold">
+                        <nav class="display-4 text-white bg-dark font-weight-bold">
+                    
+                            <span style="color: yellow;">G</span>über
+        
+                            <small style="font-size: 12px">An Über Service. By Gersh.</small>
+          
+                        </nav>
+                        <button type="button" id="sidebarCollapse" class="btn btn-block">
+                                <i class="fas fa-align-left"></i>
+                                <span>Toggle</span>
+                            </button>
+                    </header>
+                <article class="p-4 bg-else">
+
+                        <h2>About Guber</h2>
+                        <p>Guber is an online web app that optimizes transportation. It sends a message to the main driver: Mark Getshman, in order to make a pickup to whichever destination. There can also be no destination, for entartainment purposes only.</p>
+                        
             
-                    <span style="color: yellow;">G</span>über
-
-                    <small style="font-size: 12px">An Über Service. By Gersh.</small>
-  
-                </nav>
-                <button type="button" id="sidebarCollapse" class="btn float-left btn-block">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle</span>
-                    </button>
-            </header>
-
-    <article class="p-4 mt-4 bg-else">
-
-            <h2>About Guber</h2>
-            <p>Guber is an online web app that optimizes transportation. It sends a message to the main driver: Mark Getshman, in order to make a pickup to whichever destination. There can also be no destination, for entartainment purposes only.</p>
+                        <div class="line"></div>
             
-
-            <div class="line"></div>
-
-            <h2>The Mermaz - A Quick History</h2>
-            <p>July 1916 - An infamous Palestinian bafoon named "Ilan" establishes a social-network called "The Center" at a local fishing hub.</p>
-                    <p>August 1916 - An dark skinned Iraqi settler named "Mazan" takes ownership of "The Center" and publicly renames it "The Merzer"</p>
-                            <p>Second-Half of August 1916 - A Polish usurper infiltrates "The Merzer" ranks and gains favourable admiration.</p>
-                                    <p>  September 1917 - "The Merzer" loses credentiality. A few accelerationists continue operating the movement conspicuously.</p>
-           
-    </article>
-
+                        <h2>The Mermaz - A Quick History</h2>
+                        <p>July 1916 - An infamous Palestinian bafoon named "Ilan" establishes a social-network called "The Center" at a local fishing hub.</p>
+                                <p>August 1916 - An dark skinned Iraqi settler named "Mazan" takes ownership of "The Center" and publicly renames it "The Merzer"</p>
+                                        <p>Second-Half of August 1916 - A Polish usurper infiltrates "The Merzer" ranks and gains favourable admiration.</p>
+                                                <p>  September 1917 - "The Merzer" loses credentiality. A few accelerationists continue operating the movement conspicuously.</p>
+                       
+                </article>
         </div>
     </div>
 
