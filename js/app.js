@@ -1,13 +1,23 @@
 $(document).ready(function () {
     console.log("jquery loaded");
 
-    $('#location').val(localStorage["location"]);
+
+    $('#name').val(localStorage["name"]);
+
 
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1; //January is 0!
     var yyyy = today.getFullYear();
     
+    var time = (
+        ("0" + today.getHours()).slice(-2)   + ":" + 
+        ("0" + today.getMinutes()).slice(-2) + ":" + 
+        ("0" + today.getSeconds()).slice(-2));
+        console.log(time);
+    
+        $('#time').val(time);
+
     if(dd<10) {
         dd = '0'+dd
     } 
@@ -59,7 +69,9 @@ $(document).ready(function () {
     });
 
 
-    
+    $('#name').on('focusout',function(){
+        localStorage["name"] = $('#name').val();
+    });
 
 
     
