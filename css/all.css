@@ -68,7 +68,7 @@ header{
     text-align: center;
 }
 .input-group-prepend{
-    width: 2.4em;
+    width: 2.8em;
 }
 .input-group{
     justify-content: space-between;
@@ -136,7 +136,10 @@ p{
     background-color: #3888bc;
     color: white;
 }
-
+.bg-else{
+    background-color:gray;
+    color:black;
+}
 
 /* Customize the label (the container) */
 .container2 {
@@ -204,4 +207,10 @@ p{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  #icons a{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
   }
